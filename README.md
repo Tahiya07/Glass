@@ -1,27 +1,17 @@
 # Orion Store Navbar (Only)
 
-This folder contains the Orion Store bottom navbar extracted with the same component structure and class names.
+Exact Orion Store bottom navbar extracted with the same component structure and class names.
 
-## Included files
+## Run
 
-- `components/BottomNav.tsx` (exact navbar component)
-- `types.ts` (`Tab` type dependency)
-- `index.css` (theme variables + navbar-required custom classes/animations)
-- `tailwind.config.js` (required color tokens and theme mappings)
-- `postcss.config.js`
-- `package.json` (minimal dependency set)
-
-## Required imports in your app
-
-Import these once in your global entry file:
-
-```ts
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import './index.css';
+```bash
+npm install
+npm run dev
 ```
 
-Then use the component:
+## Entry files
 
-```tsx
-import BottomNav from './components/BottomNav';
-```
+- `src/main.tsx` (Vite app entry)
+- `src/App.tsx` (preview page)
+- `src/components/BottomNav.tsx` (exact navbar component)
+- `index.css` (theme variables + navbar-specific animation/util classes)
