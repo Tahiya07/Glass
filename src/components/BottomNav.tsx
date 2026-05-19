@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { Tab } from '../types';
+export type Tab = 'android' | 'pc' | 'tv' | 'about' | 'updates';
+
 
 interface BottomNavProps {
   activeTab: Tab;

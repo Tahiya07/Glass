@@ -1,6 +1,7 @@
 import React from 'react';
 import BottomNav from '../components/BottomNav';
-import { Tab } from '../types';
+export type Tab = 'android' | 'pc' | 'tv' | 'about' | 'updates';
+
 
 const App: React.FC = () => {
   const [activeTab, setActiveTab] = React.useState<Tab>('android');
