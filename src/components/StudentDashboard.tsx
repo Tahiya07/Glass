@@ -15,20 +15,20 @@ const cardMotion = {
 
 const StudentDashboard: React.FC = () => {
   return (
-    <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
-      <section className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl">
+    <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-32 pt-6 sm:px-5 sm:pt-7 md:px-8">
+      <section className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-4 backdrop-blur-xl sm:p-5">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-theme-sub">Student Dashboard</p>
-            <h1 className="mt-1 text-2xl font-black tracking-tight text-theme-text">Semester Overview</h1>
+            <p className="text-[11px] uppercase tracking-[0.18em] text-theme-sub sm:text-xs sm:tracking-[0.22em]">Student Dashboard</p>
+            <h1 className="mt-1 text-xl font-black tracking-tight text-theme-text sm:text-2xl">Semester Overview</h1>
           </div>
-          <div className="rounded-2xl border border-theme-border/50 bg-theme-element/70 px-3 py-2 text-xs font-bold text-theme-sub">
+          <div className="rounded-2xl border border-theme-border/50 bg-theme-element/70 px-2.5 py-1.5 text-[11px] font-bold text-theme-sub sm:px-3 sm:py-2 sm:text-xs">
             Spring 2026
           </div>
         </div>
       </section>
 
-      <section className="mt-5 grid gap-4 md:grid-cols-3">
+      <section className="mt-4 grid gap-3 sm:mt-5 sm:gap-4 md:grid-cols-3">
         {studentStats.map((stat) => (
           <motion.article
             key={stat.label}
@@ -39,16 +39,16 @@ const StudentDashboard: React.FC = () => {
               <p className="text-sm font-semibold text-theme-sub">{stat.label}</p>
               <i className={`fas ${stat.icon} text-primary`}></i>
             </div>
-            <p className="mt-2 text-3xl font-black tracking-tight text-theme-text">{stat.value}</p>
+            <p className="mt-2 text-2xl font-black tracking-tight text-theme-text sm:text-3xl">{stat.value}</p>
             <p className="mt-1 text-xs font-semibold text-theme-sub">{stat.trend}</p>
           </motion.article>
         ))}
       </section>
 
-      <section className="mt-5 grid gap-4 lg:grid-cols-[1.45fr_1fr]">
+      <section className="mt-4 grid gap-3 sm:mt-5 sm:gap-4 lg:grid-cols-[1.45fr_1fr]">
         <motion.article
           {...cardMotion}
-          className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl"
+          className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl sm:p-5"
         >
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-extrabold text-theme-text">Course Progress</h2>
@@ -74,7 +74,7 @@ const StudentDashboard: React.FC = () => {
 
         <motion.article
           {...cardMotion}
-          className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl"
+          className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl sm:p-5"
         >
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-extrabold text-theme-text">Upcoming Tasks</h2>

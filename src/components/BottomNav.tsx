@@ -1,8 +1,7 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-export type Tab = 'home' | 'courses' | 'schedule' | 'profile';
 
+export type Tab = 'home' | 'courses' | 'schedule' | 'profile';
 
 interface BottomNavProps {
   activeTab: Tab;
@@ -10,60 +9,45 @@ interface BottomNavProps {
   hiddenTabs?: string[];
 }
 
+const tabs: Array<{ id: Tab; label: string; icon: string }> = [
+  { id: 'home', label: 'Home', icon: 'fa-house-chimney' },
+  { id: 'courses', label: 'Courses', icon: 'fa-book-open' },
+  { id: 'schedule', label: 'Schedule', icon: 'fa-calendar-days' },
+  { id: 'profile', label: 'Profile', icon: 'fa-user-graduate' },
+];
+
 const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange, hiddenTabs = [] }) => {
   return (
-    <div className="fixed bottom-4 left-0 right-0 z-40 flex justify-center pointer-events-none safe-area-pb">
-       <nav className="orion-glass-nav bg-surface/95 backdrop-blur-lg border border-theme-border p-1.5 rounded-[2rem] flex items-center gap-1 animate-slide-up pointer-events-auto transform translate-z-0">
-         
-         {!hiddenTabs.includes('home') && (
-             <motion.button 
-                onClick={() => onTabChange('home')}
-                whileHover={{ scale: 1.03, y: -1 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 26 }}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'home' ? 'brand-gradient-bg text-[#2f2a3f] scale-105' : 'text-theme-sub hover:bg-theme-element/70'}`}
-             >
-                <i className="fas fa-house-chimney text-lg"></i>
-                {activeTab === 'home' && <span className="animate-fade-in text-sm ml-1.5">Home</span>}
-             </motion.button>
-         )}
+    <div className="fixed bottom-3 left-0 right-0 z-40 flex justify-center px-3 pointer-events-none safe-area-pb sm:bottom-4">
+      <nav className="orion-glass-nav pointer-events-auto flex w-full max-w-max items-center gap-1 rounded-[1.7rem] border border-theme-border px-1.5 py-1.5 backdrop-blur-lg animate-slide-up sm:rounded-[2rem]">
+        {tabs
+          .filter((tab) => !hiddenTabs.includes(tab.id))
+          .map((tab) => {
+            const isActive = activeTab === tab.id;
 
-         {!hiddenTabs.includes('courses') && (
-             <motion.button 
-                onClick={() => onTabChange('courses')}
-                whileHover={{ scale: 1.03, y: -1 }}
+            return (
+              <motion.button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.97 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 26 }}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'courses' ? 'brand-gradient-bg text-[#2f2a3f] scale-105' : 'text-theme-sub hover:bg-theme-element/70'}`}
-             >
-                <i className="fas fa-book-open text-lg"></i>
-                {activeTab === 'courses' && <span className="animate-fade-in text-sm ml-1.5">Courses</span>}
-             </motion.button>
-         )}
-
-         {!hiddenTabs.includes('schedule') && (
-             <motion.button 
-                onClick={() => onTabChange('schedule')}
-                whileHover={{ scale: 1.03, y: -1 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: 'spring', stiffness: 400, damping: 26 }}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'schedule' ? 'brand-gradient-bg text-[#2f2a3f] scale-105' : 'text-theme-sub hover:bg-theme-element/70'}`}
-             >
-                <i className="fas fa-calendar-days text-lg"></i>
-                {activeTab === 'schedule' && <span className="animate-fade-in text-sm ml-1.5">Schedule</span>}
-             </motion.button>
-         )}
-
-         <motion.button 
-            onClick={() => onTabChange('profile')}
-            whileHover={{ scale: 1.03, y: -1 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ type: 'spring', stiffness: 400, damping: 26 }}
-            className={`px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center gap-2 ${activeTab === 'profile' ? 'brand-gradient-bg text-[#2f2a3f] scale-105' : 'text-theme-sub hover:bg-theme-element/70'}`}
-         >
-            <i className="fas fa-user-graduate text-lg"></i>
-            {activeTab === 'profile' && <span className="animate-fade-in text-sm ml-1.5">Profile</span>}
-         </motion.button>
+                transition={{ type: 'spring', stiffness: 420, damping: 28 }}
+                className={`relative z-10 flex items-center justify-center gap-1.5 rounded-[1.3rem] px-3 py-2 text-sm font-bold transition-colors duration-200 sm:px-4 sm:py-2.5 ${
+                  isActive ? 'text-[#2f2a3f]' : 'text-theme-sub hover:bg-theme-element/70'
+                }`}
+              >
+                {isActive && (
+                  <motion.span
+                    layoutId="dock-pill"
+                    className="dock-pill brand-gradient-bg absolute inset-0 -z-10 rounded-[1.3rem]"
+                    transition={{ type: 'spring', stiffness: 360, damping: 32, mass: 0.8 }}
+                  />
+                )}
+                <i className={`fas ${tab.icon} text-base sm:text-lg`}></i>
+                {isActive && <span className="animate-fade-in text-xs sm:text-sm">{tab.label}</span>}
+              </motion.button>
+            );
+          })}
       </nav>
     </div>
   );

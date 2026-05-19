@@ -14,17 +14,17 @@ export const CoursesPage: React.FC = () => {
   ];
 
   return (
-    <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
-      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl">
+    <section className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-32 pt-6 sm:px-5 sm:pt-7 md:px-8">
+      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-4 backdrop-blur-xl sm:p-5">
         <h2 className="text-xl font-black text-theme-text">My Courses</h2>
         <p className="mt-1 text-sm text-theme-sub">Current semester enrolled modules and schedule slots.</p>
       </div>
-      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-4 grid gap-3 sm:mt-5 sm:gap-4 md:grid-cols-2 xl:grid-cols-3">
         {courses.map((course) => (
           <motion.article
             key={course.code}
             {...cardMotion}
-            className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl"
+            className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl sm:p-5"
           >
             <p className="text-xs font-black tracking-[0.18em] text-theme-sub">{course.code}</p>
             <h3 className="mt-2 text-lg font-extrabold text-theme-text">{course.title}</h3>
@@ -50,20 +50,20 @@ export const SchedulePage: React.FC = () => {
   ];
 
   return (
-    <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
-      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl">
+    <section className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-32 pt-6 sm:px-5 sm:pt-7 md:px-8">
+      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-4 backdrop-blur-xl sm:p-5">
         <h2 className="text-xl font-black text-theme-text">Today&apos;s Schedule</h2>
         <p className="mt-1 text-sm text-theme-sub">Time-boxed routine to keep your semester momentum.</p>
       </div>
-      <div className="mt-5 space-y-3">
+      <div className="mt-4 space-y-3 sm:mt-5">
         {timeline.map((item) => (
           <motion.article
             key={item.time}
             {...cardMotion}
             className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl"
           >
-            <div className="flex items-start gap-4">
-              <div className="brand-gradient-bg mt-0.5 rounded-xl px-3 py-2 text-xs font-black text-[#2f2a3f]">{item.time}</div>
+            <div className="flex items-start gap-3 sm:gap-4">
+              <div className="brand-gradient-bg mt-0.5 rounded-xl px-2.5 py-1.5 text-[11px] font-black text-[#2f2a3f] sm:px-3 sm:py-2 sm:text-xs">{item.time}</div>
               <div>
                 <h3 className="text-base font-extrabold text-theme-text">{item.title}</h3>
                 <p className="mt-1 text-sm text-theme-sub">{item.note}</p>
@@ -78,9 +78,9 @@ export const SchedulePage: React.FC = () => {
 
 export const ProfilePage: React.FC = () => {
   return (
-    <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
-      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl">
-        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
+    <section className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-32 pt-6 sm:px-5 sm:pt-7 md:px-8">
+      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-4 backdrop-blur-xl sm:p-5">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
           <div className="brand-gradient-bg h-20 w-20 rounded-3xl p-1">
             <div className="flex h-full w-full items-center justify-center rounded-[1.2rem] bg-surface text-2xl text-primary">
               <i className="fas fa-user-graduate"></i>
@@ -94,7 +94,7 @@ export const ProfilePage: React.FC = () => {
         </div>
       </div>
 
-      <div className="mt-5 grid gap-4 md:grid-cols-3">
+      <div className="mt-4 grid gap-3 sm:mt-5 sm:gap-4 md:grid-cols-3">
         <motion.article {...cardMotion} className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl">
           <p className="text-sm font-bold text-theme-sub">Scholarship</p>
           <p className="mt-2 text-2xl font-black text-theme-text">Merit 40%</p>

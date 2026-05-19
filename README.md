@@ -8,6 +8,8 @@ Exact Orion Store bottom navbar extracted with the same component structure and 
 - Theme switching (`light`, `dark`)
 - Lavender brand gradient accents (`linear-gradient(135deg, #E6E6FA, #c9bfe0, #bfb4db)`)
 - Apple-inspired liquid glass cards/nav with subtle noise texture
+- Mobile-responsive spacing and typography for phone-first layout
+- Orion-like dock glide animation for active navbar pill
 - Student pages mapped to navbar tabs:
   - `Home`
   - `Courses`

@@ -39,12 +39,12 @@ const App: React.FC = () => {
         <div className="dashboard-orb dashboard-orb-b" />
       </div>
       <main>
-        <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-5 md:px-8">
-          <div className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/60 px-4 py-3 backdrop-blur-xl">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pt-4 sm:px-5 sm:pt-5 md:px-8">
+          <div className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/60 px-4 py-3 backdrop-blur-xl sm:px-5">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-theme-sub">Active Module</p>
-                <h2 className="mt-1 text-lg font-black text-theme-text">{sectionTitle[activeTab]}</h2>
+                <h2 className="mt-1 text-base font-black text-theme-text sm:text-lg">{sectionTitle[activeTab]}</h2>
               </div>
               <motion.button
                 onClick={cycleTheme}
