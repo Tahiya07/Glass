@@ -29,9 +29,9 @@ const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange, hiddenTab
               <motion.button
                 key={tab.id}
                 onClick={() => onTabChange(tab.id)}
-                whileHover={{ y: -1 }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ type: 'spring', stiffness: 420, damping: 28 }}
+                whileHover={{ y: -2, scale: 1.035 }}
+                whileTap={{ scale: 0.965 }}
+                transition={{ type: 'spring', stiffness: 460, damping: 24, mass: 0.66 }}
                 className={`relative z-10 flex items-center justify-center gap-1.5 rounded-[1.3rem] px-3 py-2 text-sm font-bold transition-colors duration-200 sm:px-4 sm:py-2.5 ${
                   isActive ? 'text-[#2f2a3f]' : 'text-theme-sub hover:bg-theme-element/70'
                 }`}

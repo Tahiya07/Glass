@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const cardMotion = {
-  whileHover: { y: -3, scale: 1.01 },
-  transition: { type: 'spring', stiffness: 340, damping: 24 },
+  whileHover: { y: -6, scale: 1.015, rotateX: 0.8 },
+  whileTap: { scale: 0.995 },
+  transition: { type: 'spring', stiffness: 360, damping: 22, mass: 0.72 },
 };
 
 export const CoursesPage: React.FC = () => {
@@ -81,7 +82,7 @@ export const ProfilePage: React.FC = () => {
     <section className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-32 pt-6 sm:px-5 sm:pt-7 md:px-8">
       <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-4 backdrop-blur-xl sm:p-5">
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
-          <div className="brand-gradient-bg h-20 w-20 rounded-3xl p-1">
+          <div className="glass-surface orion-glass-card brand-gradient-bg h-20 w-20 rounded-3xl p-1">
             <div className="flex h-full w-full items-center justify-center rounded-[1.2rem] bg-surface text-2xl text-primary">
               <i className="fas fa-user-graduate"></i>
             </div>

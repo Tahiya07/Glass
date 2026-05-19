@@ -9,8 +9,9 @@ const statusStyle: Record<(typeof assignments)[number]['status'], string> = {
 };
 
 const cardMotion = {
-  whileHover: { y: -3, scale: 1.01 },
-  transition: { type: 'spring', stiffness: 340, damping: 24 },
+  whileHover: { y: -6, scale: 1.015, rotateX: 0.8 },
+  whileTap: { scale: 0.995 },
+  transition: { type: 'spring', stiffness: 360, damping: 22, mass: 0.72 },
 };
 
 const StudentDashboard: React.FC = () => {
@@ -22,7 +23,7 @@ const StudentDashboard: React.FC = () => {
             <p className="text-[11px] uppercase tracking-[0.18em] text-theme-sub sm:text-xs sm:tracking-[0.22em]">Student Dashboard</p>
             <h1 className="mt-1 text-xl font-black tracking-tight text-theme-text sm:text-2xl">Semester Overview</h1>
           </div>
-          <div className="rounded-2xl border border-theme-border/50 bg-theme-element/70 px-2.5 py-1.5 text-[11px] font-bold text-theme-sub sm:px-3 sm:py-2 sm:text-xs">
+          <div className="glass-surface orion-glass-card rounded-2xl border border-theme-border/50 bg-card/60 px-2.5 py-1.5 text-[11px] font-bold text-theme-sub sm:px-3 sm:py-2 sm:text-xs">
             Spring 2026
           </div>
         </div>
@@ -82,7 +83,12 @@ const StudentDashboard: React.FC = () => {
           </div>
           <div className="space-y-3">
             {assignments.map((item) => (
-              <div key={item.title} className="rounded-xl border border-theme-border/40 bg-theme-element/35 p-3">
+              <motion.div
+                key={item.title}
+                whileHover={{ y: -2, scale: 1.01 }}
+                transition={{ type: 'spring', stiffness: 360, damping: 24 }}
+                className="glass-surface orion-glass-card rounded-xl border border-theme-border/40 bg-card/55 p-3 backdrop-blur-xl"
+              >
                 <p className="text-sm font-bold text-theme-text">{item.title}</p>
                 <p className="mt-1 text-xs font-semibold text-theme-sub">{item.course}</p>
                 <div className="mt-2 flex items-center justify-between">
@@ -91,7 +97,7 @@ const StudentDashboard: React.FC = () => {
                     {item.status}
                   </span>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </motion.article>

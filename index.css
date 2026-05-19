@@ -62,7 +62,8 @@ body {
 }
 
 .glass-surface {
-  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease, backdrop-filter 220ms ease;
+  will-change: transform, box-shadow;
 }
 
 .orion-glass-nav {
@@ -111,6 +112,13 @@ html.dark .dock-pill {
   -webkit-backdrop-filter: blur(22px) saturate(170%);
   border-color: var(--border-color);
   box-shadow: var(--shadow-soft), inset 0 1px 0 rgba(255, 255, 255, 0.46);
+}
+
+.orion-glass-card:hover {
+  background-color: color-mix(in srgb, var(--bg-card) 88%, rgba(255, 255, 255, 0.12));
+  backdrop-filter: blur(26px) saturate(176%);
+  -webkit-backdrop-filter: blur(26px) saturate(176%);
+  box-shadow: 0 18px 28px -20px rgba(137, 151, 173, 0.44), inset 0 1px 0 rgba(255, 255, 255, 0.54);
 }
 
 .orion-glass-card::before {
