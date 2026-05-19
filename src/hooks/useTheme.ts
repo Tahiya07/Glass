@@ -4,7 +4,7 @@ export type ThemeName = 'light' | 'dark';
 
 const STORAGE_KEY = 'orion-student-theme';
 const FALLBACK_THEME: ThemeName = 'light';
-const THEMES: ThemeName[] = ['light', 'dark'];
+const THEMES: ThemeName[] = ['light','dark',];
 
 const normalizeTheme = (value: string | null): ThemeName => {
   if (!value) {
@@ -23,7 +23,7 @@ export const useTheme = () => {
 
   React.useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove('light', 'dark');
+    root.classList.remove('light','dark');
     root.classList.add(theme);
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);

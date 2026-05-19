@@ -89,8 +89,8 @@ export const ProfilePage: React.FC = () => {
           </div>
           <div>
             <p className="text-xs font-black uppercase tracking-[0.18em] text-theme-sub">Student Profile</p>
-            <h2 className="mt-1 text-2xl font-black text-theme-text">Tahiya Rahman</h2>
-            <p className="mt-1 text-sm text-theme-sub">CSE Department · Batch 2024 · ID 241-15-402</p>
+            <h2 className="mt-1 text-2xl font-black text-theme-text">Tahiya Zareen</h2>
+            <p className="mt-1 text-sm text-theme-sub">CSE Department · Batch 52 · ID 241-15-402</p>
           </div>
         </div>
       </div>
