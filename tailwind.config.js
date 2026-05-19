@@ -1,5 +1,3 @@
-import plugin from 'tailwindcss/plugin';
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -16,8 +14,8 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: '#6366f1',
-          light: '#a5b4fc',
+          DEFAULT: '#c9bfe0',
+          light: '#e6e6fa',
         },
         acid: '#bef264',
         neon: '#d946ef',
@@ -42,9 +40,5 @@ export default {
       },
     },
   },
-  plugins: [
-    plugin(function ({ addVariant }) {
-      addVariant('dusk', 'html.dusk &');
-    }),
-  ],
+  plugins: [],
 };

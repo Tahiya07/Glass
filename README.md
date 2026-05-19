@@ -5,7 +5,9 @@ Exact Orion Store bottom navbar extracted with the same component structure and 
 ## Features
 
 - Orion-style glass navbar depth and layered blur
-- Theme switching (`light`, `dusk`, `dark`, `oled`)
+- Theme switching (`light`, `dark`)
+- Lavender brand gradient accents (`linear-gradient(135deg, #E6E6FA, #c9bfe0, #bfb4db)`)
+- Apple-inspired liquid glass cards/nav with subtle noise texture
 - Student pages mapped to navbar tabs:
   - `Home`
   - `Courses`

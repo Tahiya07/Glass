@@ -1,10 +1,10 @@
 import React from 'react';
 
-export type ThemeName = 'light' | 'dusk' | 'dark' | 'oled';
+export type ThemeName = 'light' | 'dark';
 
 const STORAGE_KEY = 'orion-student-theme';
-const FALLBACK_THEME: ThemeName = 'dusk';
-const THEMES: ThemeName[] = ['light', 'dusk', 'dark', 'oled'];
+const FALLBACK_THEME: ThemeName = 'light';
+const THEMES: ThemeName[] = ['light', 'dark'];
 
 const normalizeTheme = (value: string | null): ThemeName => {
   if (!value) {
@@ -23,7 +23,7 @@ export const useTheme = () => {
 
   React.useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove('light', 'dusk', 'dark', 'oled');
+    root.classList.remove('light', 'dark');
     root.classList.add(theme);
     window.localStorage.setItem(STORAGE_KEY, theme);
   }, [theme]);

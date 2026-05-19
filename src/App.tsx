@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import BottomNav from './components/BottomNav';
 import type { Tab } from './components/BottomNav';
 import StudentDashboard from './components/StudentDashboard';
@@ -16,13 +17,7 @@ const App: React.FC = () => {
     profile: 'Student Profile',
   };
 
-  const themeIcon = theme === 'light'
-    ? 'fa-sun'
-    : theme === 'dusk'
-      ? 'fa-cloud-sun'
-      : theme === 'dark'
-        ? 'fa-moon'
-        : 'fa-circle';
+  const themeIcon = theme === 'light' ? 'fa-moon' : 'fa-sun';
 
   const renderTabPage = () => {
     if (activeTab === 'courses') {
@@ -45,20 +40,23 @@ const App: React.FC = () => {
       </div>
       <main>
         <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pt-5 md:px-8">
-          <div className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/60 px-4 py-3 backdrop-blur-xl shadow-xl">
+          <div className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/60 px-4 py-3 backdrop-blur-xl">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <p className="text-xs font-bold uppercase tracking-[0.2em] text-theme-sub">Active Module</p>
                 <h2 className="mt-1 text-lg font-black text-theme-text">{sectionTitle[activeTab]}</h2>
               </div>
-              <button
+              <motion.button
                 onClick={cycleTheme}
-                className="h-10 w-10 rounded-full border border-theme-border/60 bg-theme-element/80 text-theme-sub transition-all hover:scale-105 hover:text-primary"
+                whileHover={{ scale: 1.04, y: -1 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: 'spring', stiffness: 360, damping: 24 }}
+                className="h-10 w-10 rounded-full border border-theme-border/60 bg-theme-element/80 text-theme-sub hover:text-theme-text"
                 title={`Theme: ${theme}`}
                 aria-label={`Cycle theme (current ${theme})`}
               >
                 <i className={`fas ${themeIcon}`}></i>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
