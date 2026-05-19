@@ -1,6 +1,6 @@
 
 import React from 'react';
-export type Tab = 'android' | 'pc' | 'tv' | 'about' | 'updates';
+export type Tab = 'home' | 'courses' | 'schedule' | 'profile';
 
 
 interface BottomNavProps {
@@ -12,44 +12,44 @@ interface BottomNavProps {
 const BottomNav: React.FC<BottomNavProps> = ({ activeTab, onTabChange, hiddenTabs = [] }) => {
   return (
     <div className="fixed bottom-4 left-0 right-0 z-40 flex justify-center pointer-events-none safe-area-pb">
-       <nav className="bg-surface/95 backdrop-blur-lg border border-theme-border p-1.5 rounded-[2rem] shadow-2xl flex items-center gap-1 animate-slide-up pointer-events-auto transform translate-z-0">
+       <nav className="orion-glass-nav bg-surface/95 backdrop-blur-lg border border-theme-border p-1.5 rounded-[2rem] shadow-2xl flex items-center gap-1 animate-slide-up pointer-events-auto transform translate-z-0">
          
-         {!hiddenTabs.includes('android') && (
+         {!hiddenTabs.includes('home') && (
              <button 
-                onClick={() => onTabChange('android')}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'android' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+                onClick={() => onTabChange('home')}
+                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'home' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
              >
-                <i className="fab fa-android text-lg"></i>
-                {activeTab === 'android' && <span className="animate-fade-in text-sm ml-1.5">Apps</span>}
+                <i className="fas fa-house-chimney text-lg"></i>
+                {activeTab === 'home' && <span className="animate-fade-in text-sm ml-1.5">Home</span>}
              </button>
          )}
 
-         {!hiddenTabs.includes('pc') && (
+         {!hiddenTabs.includes('courses') && (
              <button 
-                onClick={() => onTabChange('pc')}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'pc' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+                onClick={() => onTabChange('courses')}
+                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'courses' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
              >
-                <i className="fab fa-windows text-lg"></i>
-                {activeTab === 'pc' && <span className="animate-fade-in text-sm ml-1.5">PC</span>}
+                <i className="fas fa-book-open text-lg"></i>
+                {activeTab === 'courses' && <span className="animate-fade-in text-sm ml-1.5">Courses</span>}
              </button>
          )}
 
-         {!hiddenTabs.includes('tv') && (
+         {!hiddenTabs.includes('schedule') && (
              <button 
-                onClick={() => onTabChange('tv')}
-                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'tv' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+                onClick={() => onTabChange('schedule')}
+                className={`group px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center justify-center ${activeTab === 'schedule' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
              >
-                <i className="fas fa-tv text-lg"></i>
-                {activeTab === 'tv' && <span className="animate-fade-in text-sm ml-1.5">TV</span>}
+                <i className="fas fa-calendar-days text-lg"></i>
+                {activeTab === 'schedule' && <span className="animate-fade-in text-sm ml-1.5">Schedule</span>}
              </button>
          )}
 
          <button 
-            onClick={() => onTabChange('about')}
-            className={`px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center gap-2 ${activeTab === 'about' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
+            onClick={() => onTabChange('profile')}
+            className={`px-4 py-2.5 rounded-[1.5rem] font-bold transition-all duration-200 flex items-center gap-2 ${activeTab === 'profile' ? 'bg-primary text-white shadow-lg shadow-primary/30 scale-105' : 'text-theme-sub hover:bg-theme-element'}`}
          >
-            <i className="fas fa-code text-lg"></i>
-            {activeTab === 'about' && <span className="animate-fade-in text-sm ml-1.5">Dev</span>}
+            <i className="fas fa-user-graduate text-lg"></i>
+            {activeTab === 'profile' && <span className="animate-fade-in text-sm ml-1.5">Profile</span>}
          </button>
       </nav>
     </div>

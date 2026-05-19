@@ -10,7 +10,7 @@ const statusStyle: Record<(typeof assignments)[number]['status'], string> = {
 const StudentDashboard: React.FC = () => {
   return (
     <div className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
-      <section className="glass-surface rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl shadow-2xl">
+      <section className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl shadow-2xl">
         <div className="flex items-center justify-between">
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-theme-sub">Student Dashboard</p>
@@ -24,7 +24,7 @@ const StudentDashboard: React.FC = () => {
 
       <section className="mt-5 grid gap-4 md:grid-cols-3">
         {studentStats.map((stat) => (
-          <article key={stat.label} className="glass-surface rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl shadow-xl">
+          <article key={stat.label} className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl shadow-xl">
             <div className="flex items-center justify-between">
               <p className="text-sm font-semibold text-theme-sub">{stat.label}</p>
               <i className={`fas ${stat.icon} text-primary`}></i>
@@ -36,7 +36,7 @@ const StudentDashboard: React.FC = () => {
       </section>
 
       <section className="mt-5 grid gap-4 lg:grid-cols-[1.45fr_1fr]">
-        <article className="glass-surface rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl shadow-xl">
+        <article className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl shadow-xl">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-extrabold text-theme-text">Course Progress</h2>
             <span className="text-xs font-semibold text-theme-sub">This Week</span>
@@ -62,7 +62,7 @@ const StudentDashboard: React.FC = () => {
           </div>
         </article>
 
-        <article className="glass-surface rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl shadow-xl">
+        <article className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl shadow-xl">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-lg font-extrabold text-theme-text">Upcoming Tasks</h2>
             <i className="fas fa-bell text-theme-sub"></i>

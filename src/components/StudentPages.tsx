@@ -1,0 +1,99 @@
+import React from 'react';
+
+export const CoursesPage: React.FC = () => {
+  const courses = [
+    { title: 'Data Structures', code: 'CSE-221', room: 'Lab 3', slots: 'Mon/Wed 10:00' },
+    { title: 'Linear Algebra', code: 'MAT-204', room: 'A-402', slots: 'Tue/Thu 11:30' },
+    { title: 'Web Engineering', code: 'CSE-250', room: 'Smart Room 2', slots: 'Sun/Tue 14:00' },
+  ];
+
+  return (
+    <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
+      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl shadow-2xl">
+        <h2 className="text-xl font-black text-theme-text">My Courses</h2>
+        <p className="mt-1 text-sm text-theme-sub">Current semester enrolled modules and schedule slots.</p>
+      </div>
+      <div className="mt-5 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {courses.map((course) => (
+          <article key={course.code} className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-5 backdrop-blur-xl shadow-xl">
+            <p className="text-xs font-black tracking-[0.18em] text-theme-sub">{course.code}</p>
+            <h3 className="mt-2 text-lg font-extrabold text-theme-text">{course.title}</h3>
+            <p className="mt-3 text-sm font-semibold text-theme-sub">
+              <i className="fas fa-door-open mr-2 text-primary"></i>{course.room}
+            </p>
+            <p className="mt-1 text-sm font-semibold text-theme-sub">
+              <i className="fas fa-clock mr-2 text-primary"></i>{course.slots}
+            </p>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const SchedulePage: React.FC = () => {
+  const timeline = [
+    { time: '08:30', title: 'Morning Focus Session', note: 'Algorithm revision · 45 min' },
+    { time: '10:00', title: 'Data Structures Class', note: 'Heap & Priority Queue lab' },
+    { time: '14:00', title: 'Web Engineering', note: 'Team sprint planning' },
+    { time: '19:00', title: 'Assignment Block', note: 'Linear Algebra worksheet' },
+  ];
+
+  return (
+    <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
+      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl shadow-2xl">
+        <h2 className="text-xl font-black text-theme-text">Today&apos;s Schedule</h2>
+        <p className="mt-1 text-sm text-theme-sub">Time-boxed routine to keep your semester momentum.</p>
+      </div>
+      <div className="mt-5 space-y-3">
+        {timeline.map((item) => (
+          <article key={item.time} className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl shadow-xl">
+            <div className="flex items-start gap-4">
+              <div className="mt-0.5 rounded-xl bg-primary px-3 py-2 text-xs font-black text-white">{item.time}</div>
+              <div>
+                <h3 className="text-base font-extrabold text-theme-text">{item.title}</h3>
+                <p className="mt-1 text-sm text-theme-sub">{item.note}</p>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export const ProfilePage: React.FC = () => {
+  return (
+    <section className="relative z-10 mx-auto w-full max-w-6xl px-5 pb-32 pt-7 md:px-8">
+      <div className="glass-surface orion-glass-card rounded-3xl border border-theme-border/60 bg-card/70 p-5 backdrop-blur-xl shadow-2xl">
+        <div className="flex flex-col items-start gap-4 md:flex-row md:items-center">
+          <div className="h-20 w-20 rounded-3xl bg-gradient-to-br from-primary to-indigo-300 p-1 shadow-xl shadow-primary/30">
+            <div className="flex h-full w-full items-center justify-center rounded-[1.2rem] bg-surface text-2xl text-primary">
+              <i className="fas fa-user-graduate"></i>
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-theme-sub">Student Profile</p>
+            <h2 className="mt-1 text-2xl font-black text-theme-text">Tahiya Rahman</h2>
+            <p className="mt-1 text-sm text-theme-sub">CSE Department · Batch 2024 · ID 241-15-402</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-5 grid gap-4 md:grid-cols-3">
+        <article className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl shadow-xl">
+          <p className="text-sm font-bold text-theme-sub">Scholarship</p>
+          <p className="mt-2 text-2xl font-black text-theme-text">Merit 40%</p>
+        </article>
+        <article className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl shadow-xl">
+          <p className="text-sm font-bold text-theme-sub">Completed Credits</p>
+          <p className="mt-2 text-2xl font-black text-theme-text">64</p>
+        </article>
+        <article className="glass-surface orion-glass-card rounded-2xl border border-theme-border/60 bg-card/65 p-4 backdrop-blur-xl shadow-xl">
+          <p className="text-sm font-bold text-theme-sub">Advisor</p>
+          <p className="mt-2 text-2xl font-black text-theme-text">Dr. A. Karim</p>
+        </article>
+      </div>
+    </section>
+  );
+};

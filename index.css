@@ -121,6 +121,48 @@ header,
   transition: background-color 0.24s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.24s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.orion-glass-nav {
+  position: relative;
+  isolation: isolate;
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
+  box-shadow: 0 20px 40px -22px rgba(2, 6, 23, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.22);
+}
+
+.orion-glass-nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.24), transparent 28%, transparent 72%, rgba(255, 255, 255, 0.12));
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.orion-glass-nav::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.orion-glass-card {
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 22px 40px -28px rgba(2, 6, 23, 0.5), 0 12px 24px -18px rgba(2, 6, 23, 0.48);
+}
+
+.orion-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.18), transparent 30%, transparent 68%, rgba(255, 255, 255, 0.08));
+}
+
 body.no-glass nav,
 body.perf-mode nav {
   background-color: var(--glass-solid-bg) !important;
@@ -165,4 +207,16 @@ body.perf-mode nav {
 .dashboard-grid {
   background-image: linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
   background-size: 22px 22px;
+}
+
+html.dusk .orion-glass-nav,
+html.dark .orion-glass-nav,
+html.oled .orion-glass-nav {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+  box-shadow: 0 26px 44px -24px rgba(0, 0, 0, 0.72), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+html.dark .orion-glass-card,
+html.oled .orion-glass-card {
+  box-shadow: 0 26px 48px -26px rgba(0, 0, 0, 0.78), 0 14px 28px -20px rgba(0, 0, 0, 0.74);
 }
