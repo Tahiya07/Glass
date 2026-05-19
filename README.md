@@ -1,6 +1,6 @@
-# Orion Store Navbar (Only)
+# Orion Glass Navbar + Student Dashboard
 
-Exact Orion Store bottom navbar extracted with the same component structure and class names.
+Exact Orion Store bottom navbar extracted with the same component structure and class names, now embedded in a student dashboard demo so the frosted glass style is clearly visible.
 
 ## Run
 
@@ -12,6 +12,8 @@ npm run dev
 ## Entry files
 
 - `src/main.tsx` (Vite app entry)
-- `src/App.tsx` (preview page)
+- `src/App.tsx` (student dashboard shell + navbar)
 - `src/components/BottomNav.tsx` (exact navbar component)
+- `src/components/StudentDashboard.tsx` (dashboard UI)
+- `src/data/studentDashboard.ts` (demo content)
 - `index.css` (theme variables + navbar-specific animation/util classes)

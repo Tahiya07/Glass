@@ -26,12 +26,18 @@ export default {
           dark: '#0f0f11',
           light: '#f8fafc',
         },
+        card: {
+          DEFAULT: 'var(--bg-card)',
+          dark: '#18181b',
+          light: '#ffffff',
+        },
         theme: {
           text: 'var(--text-main)',
           sub: 'var(--text-sub)',
           border: 'var(--border-color)',
           element: 'var(--element-bg)',
           hover: 'var(--element-hover)',
+          input: 'var(--input-bg)',
         },
       },
     },
